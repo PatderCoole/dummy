@@ -57,7 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ground_Check.cs" />
+    <Compile Include="Assets\Scripts\KAMERA.cs" />
     <Compile Include="Assets\Scripts\Player_Movement.cs" />
+    <Compile Include="Assets\Scripts\The_Death_Situation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
