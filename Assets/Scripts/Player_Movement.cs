@@ -36,15 +36,16 @@ public class Player_Movement : MonoBehaviour
             transform.Translate(new Vector3(-1.0f, 0.0f, 0.0f) * Time.deltaTime * movement_speed);
         }
 
-
-        
-    }
-    void FixedUpdate()
-    {
         if (Input.GetKeyDown(KeyCode.Space) && luca.IsTouch_State() == true)
         {
+            //Debug.Log("Space pressed | " + Time.time.ToString());
             //transform.Translate(new Vector3(0.0f, 1.0f, 0.0f) * Time.deltaTime * jumping_speed);
             rb.AddForce(new Vector3(0.0f, 1.0f, 0.0f) * jumping_speed);
         }
+
+    }
+    void FixedUpdate()
+    {
+        
     }
 }
