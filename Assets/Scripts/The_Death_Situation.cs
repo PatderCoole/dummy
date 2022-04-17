@@ -5,6 +5,7 @@ using UnityEngine;
 public class The_Death_Situation : MonoBehaviour
 {
 
+    public AudioSource bruh;
     public float respawn_hight = -10;
     public Transform spawn;
 
@@ -19,12 +20,19 @@ public class The_Death_Situation : MonoBehaviour
     {
         if (transform.position.y < respawn_hight)
         {
-            respawn();
+            kill();
         }
     }
 
     public void respawn()
     {
         transform.position = spawn.position;
+    }
+
+    public void kill()
+    {
+        bruh.time = 0.5f;
+        bruh.Play();
+        respawn();
     }
 }

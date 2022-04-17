@@ -19,32 +19,42 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        bool moved = false;
+        Vector3 MovementVector = new Vector3(0,0,0);
+
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(new Vector3(0.0f,0.0f,1.0f) * Time.deltaTime * movement_speed);
+            MovementVector += new Vector3(0.0f, 0.0f, 1.0f);
+            moved = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(new Vector3(0.0f, 0.0f, -1.0f) * Time.deltaTime * movement_speed);
+            MovementVector += new Vector3(0.0f, 0.0f, -1.0f);
+            moved = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(new Vector3(1.0f, 0.0f, 0.0f) * Time.deltaTime * movement_speed);
+            MovementVector += new Vector3(1.0f, 0.0f, 0.0f);
+            moved = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(new Vector3(-1.0f, 0.0f, 0.0f) * Time.deltaTime * movement_speed);
+            MovementVector += new Vector3(-1.0f, 0.0f, 0.0f);
+            moved = true;
         }
 
+        if (moved == true)
+        {
+            transform.Translate(MovementVector.normalized * Time.deltaTime * movement_speed);
+        }
 
-        
-    }
-    void FixedUpdate()
-    {
         if (Input.GetKeyDown(KeyCode.Space) && luca.IsTouch_State() == true)
         {
-            //transform.Translate(new Vector3(0.0f, 1.0f, 0.0f) * Time.deltaTime * jumping_speed);
             rb.AddForce(new Vector3(0.0f, 1.0f, 0.0f) * jumping_speed);
         }
+
+
+
     }
 }
