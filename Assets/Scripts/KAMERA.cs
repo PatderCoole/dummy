@@ -18,7 +18,6 @@ public class KAMERA : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            Debug.Log(Input.GetAxis("Mouse X").ToString());
             transform.Rotate(new Vector3(0f, Input.GetAxis("Mouse X"),0f) * rot_mult);
         }
     }

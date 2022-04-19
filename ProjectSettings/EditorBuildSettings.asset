@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/cbt.unity
     guid: 3e495abb714492e4c977b7e1984d24a0
+  - enabled: 1
+    path: Assets/Scenes/holly.unity
+    guid: 28411d09ac5c0a74fae6fc83dca8ae73
+  - enabled: 1
+    path: Assets/Scenes/reaction.unity
+    guid: 595e7bcc8955a02439d8588cf2673312
   m_configObjects: {}
