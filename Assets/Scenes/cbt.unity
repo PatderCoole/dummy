@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -852,7 +852,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-15728
+  m_Name: pb_Mesh31878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1193,7 +1193,7 @@ PrefabInstance:
     - target: {fileID: 3086814893092850003, guid: 070b132c3e863214da209f594bf0d7bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05
+      value: 1.179
       objectReference: {fileID: 0}
     - target: {fileID: 3086814893092850003, guid: 070b132c3e863214da209f594bf0d7bc,
         type: 3}
@@ -1309,6 +1309,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7553196198866483085, guid: 9e252b09df9018542a9556caa9e05785,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bbebfe383234abd4a8d51dd15e207c02, type: 2}
     - target: {fileID: 7553196198866483087, guid: 9e252b09df9018542a9556caa9e05785,
         type: 3}
       propertyPath: m_Name
