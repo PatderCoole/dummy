@@ -11,7 +11,7 @@ public class Disapear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -25,7 +25,8 @@ public class Disapear : MonoBehaviour
 
         if(counter >= duration)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
                
     }
