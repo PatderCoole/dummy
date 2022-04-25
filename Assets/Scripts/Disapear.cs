@@ -6,16 +6,20 @@ public class Disapear : MonoBehaviour
 {
 
     public float duration = 3f;
+    public float respawn_duration = 3f;
     float counter = 0;
+    float re_counter = 0;
+    public Color healthy;
     public Color green;
     public Color yellow;
     public Color red;
+    public GameObject plattform;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(true);
+        plattform.SetActive(true);
         //CubeMaterial = Resources.Load<Material>("TestMat");
         //MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
         //Material oldMaterial = meshRenderer.material;
@@ -34,18 +38,32 @@ public class Disapear : MonoBehaviour
 
         if(counter >= duration * 0.5)
         {
-            GetComponent<MeshRenderer>().material.color = yellow;
+            plattform.GetComponent<MeshRenderer>().material.color = yellow;
         }
 
         if (counter >= duration * 0.8 )
         {
-            GetComponent<MeshRenderer>().material.color = red;
+            plattform.GetComponent<MeshRenderer>().material.color = red;
         }
 
         if (counter >= duration)
         {
             //Destroy(this.gameObject);
-            gameObject.SetActive(false);
+            re_counter += Time.deltaTime;
+            counter = 0;
+            plattform.SetActive(false);
+            
+        }
+
+        if(re_counter > 0)
+        {
+           re_counter = re_counter + Time.deltaTime;
+        }
+
+        if(re_counter >= respawn_duration)
+        {
+            plattform.SetActive(true);
+            re_counter = 0;
         }
                
     }
@@ -58,7 +76,7 @@ public class Disapear : MonoBehaviour
         if (temp != null)
         {
             verschwinden();
-            GetComponent<MeshRenderer>().material.color = green;
+            plattform.GetComponent<MeshRenderer>().material.color = green;
         }
     }
 
@@ -66,4 +84,10 @@ public class Disapear : MonoBehaviour
     {
         counter += Time.deltaTime;
     }
+
+    private void Awake()
+    {
+        plattform.GetComponent<MeshRenderer>().material.color = healthy;
+    }
+
 }
