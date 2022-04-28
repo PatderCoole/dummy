@@ -17,7 +17,12 @@ public class Disapear : MonoBehaviour
     
     public void PlatformOnEnable()
     {
-        plattform.GetComponent<MeshRenderer>().material.color = healthy;
+        //plattform.GetComponent<MeshRenderer>().material.color = healthy;
+        plattform.GetComponent<MeshRenderer>().material.SetColor("MyColor", healthy);
+        plattform.GetComponent<MeshRenderer>().material.EnableKeyword("ENUM_STATE_DEFAULT");
+        plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_A");
+        plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_B");
+        plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_C");
     }
 
     // Start is called before the first frame update
@@ -25,6 +30,8 @@ public class Disapear : MonoBehaviour
     {
         plattform.GetComponent<GameObjectEventHandler>()._CollEnter += OnPlatformCollsionEnter;
         plattform.GetComponent<GameObjectEventHandler>()._Enable += PlatformOnEnable;
+        plattform.GetComponent<GameObjectEventHandler>()._Start += PlatformOnEnable;
+
         plattform.SetActive(true);
         //CubeMaterial = Resources.Load<Material>("TestMat");
         //MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
@@ -44,12 +51,22 @@ public class Disapear : MonoBehaviour
 
         if(counter >= duration * 0.5)
         {
-            plattform.GetComponent<MeshRenderer>().material.color = yellow;
+            //plattform.GetComponent<MeshRenderer>().material.color = yellow;
+            plattform.GetComponent<MeshRenderer>().material.SetColor("MyColor", yellow);
+            plattform.GetComponent<MeshRenderer>().material.EnableKeyword("ENUM_STATE_B");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_A");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_C");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_DEFAULT");
         }
 
         if (counter >= duration * 0.8 )
         {
-            plattform.GetComponent<MeshRenderer>().material.color = red;
+            //plattform.GetComponent<MeshRenderer>().material.color = red;
+            plattform.GetComponent<MeshRenderer>().material.SetColor("MyColor", red);
+            plattform.GetComponent<MeshRenderer>().material.EnableKeyword("ENUM_STATE_C");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_A");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_B");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_DEFAULT");
         }
 
         if (counter >= duration)
@@ -81,7 +98,12 @@ public class Disapear : MonoBehaviour
         if (temp != null)
         {
             verschwinden();
-            plattform.GetComponent<MeshRenderer>().material.color = green;
+            //plattform.GetComponent<MeshRenderer>().material.color = green;
+            plattform.GetComponent<MeshRenderer>().material.SetColor("MyColor", green);
+            plattform.GetComponent<MeshRenderer>().material.EnableKeyword("ENUM_STATE_A");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_C");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_B");
+            plattform.GetComponent<MeshRenderer>().material.DisableKeyword("ENUM_STATE_DEFAULT");
         }
     }
 
