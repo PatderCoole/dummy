@@ -15,10 +15,16 @@ public class Disapear : MonoBehaviour
     public Color red;
     public GameObject plattform;
     
+    public void PlatformOnEnable()
+    {
+        plattform.GetComponent<MeshRenderer>().material.color = healthy;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        plattform.GetComponent<GameObjectEventHandler>()._CollEnter += OnPlatformCollsionEnter;
+        plattform.GetComponent<GameObjectEventHandler>()._Enable += PlatformOnEnable;
         plattform.SetActive(true);
         //CubeMaterial = Resources.Load<Material>("TestMat");
         //MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
@@ -68,9 +74,8 @@ public class Disapear : MonoBehaviour
                
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnPlatformCollsionEnter(Collision collision)
     {
-
         Player_Movement temp = collision.gameObject.GetComponent<Player_Movement>();
 
         if (temp != null)
@@ -85,9 +90,6 @@ public class Disapear : MonoBehaviour
         counter += Time.deltaTime;
     }
 
-    private void Awake()
-    {
-        plattform.GetComponent<MeshRenderer>().material.color = healthy;
-    }
+    
 
 }
