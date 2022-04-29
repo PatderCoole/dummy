@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/broken.unity
     guid: e38964ae0c0840d46810f8b7c2aa6647
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 7c7f45fe57e59ad49a591bb6f68819e2
   m_configObjects: {}

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: broken
+  m_Name: broken 2
   m_Shader: {fileID: -6465566751694194690, guid: 2a4ee32848f8f0d4da0267350278f513,
     type: 3}
   m_ShaderKeywords: ENUM_8115875_DEFAULT ENUM_STATE_DEFAULT
@@ -38,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_38F67AE7:
-        m_Texture: {fileID: 2800000, guid: 3e0b0e8ee0f3efd49afd8fcd329616b5, type: 3}
+        m_Texture: {fileID: 2800000, guid: fc3b32f42f5a5e644a4ad106c74f62d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_433A943E:
